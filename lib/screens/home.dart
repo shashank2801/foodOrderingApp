@@ -47,7 +47,7 @@ class _HomeState extends State<Home> {
                 ),
                 title: TextField(
                   decoration: InputDecoration(
-                    hintText: "Fulfill your craving!",
+                    hintText: "Fulfill your cravings!",
                     border: InputBorder.none,
                   ),
                 ),
@@ -70,15 +70,17 @@ class _HomeState extends State<Home> {
               ),
             ),
             Container(
-              height: 200,
+              height: 230,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: 2,
                   itemBuilder: (_, index) {
+                    int i;
+                    int j;
                     return Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
-                        height: 200,
+                        height: 220,
                         width: 220,
                         decoration: BoxDecoration(
                           color: white,
@@ -98,10 +100,27 @@ class _HomeState extends State<Home> {
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   CustomText(title: "Butter Chicken",),
-                                  Icon(Icons.favorite_border,color: red),
+                                  Icon(Icons.favorite_border,color: red,size: 19,),
                                 ],
                               ),
-                            )
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 0.0),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Row(children: [
+                                    CustomText(title: "4.7",color: grey,size:14),
+                                SizedBox(width: 2,),
+                                  for(i=0;i<4;i++)
+                                    Icon(Icons.star,size: 14,color: red,),
+                                  
+                                  for(j=i;j<5;j++)
+                                    Icon(Icons.star,color: grey,size: 14,),
+                                  ],),
+                                    CustomText(title: '420/-',size: 16),
+                              ],),
+                            ),
                           ],
                         ),
                       ),
