@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:foodapp/widgets/categories.dart';
 import 'package:foodapp/widgets/constants.dart';
+import 'package:foodapp/widgets/featured_products.dart';
+import 'package:foodapp/widgets/smallButton.dart';
 import 'package:foodapp/widgets/title.dart';
 
 class Home extends StatefulWidget {
@@ -69,64 +71,116 @@ class _HomeState extends State<Home> {
                 color: grey,
               ),
             ),
-            Container(
-              height: 230,
-              child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 2,
-                  itemBuilder: (_, index) {
-                    int i;
-                    int j;
-                    return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        height: 220,
-                        width: 220,
+            Featured(),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: CustomText(
+                title: "Popular",
+                size: 20,
+                color: grey,
+              ),
+            ),
+            Stack(
+              children: [
+                Container(
+                  child: Padding(
+                    padding: const EdgeInsets.all(11.0),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Image.network(
+                          'https://images.eatthismuch.com/site_media/img/905635_Shamarie84_8b69ffe3-76ea-4809-b7c3-759d60919a27.png'),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Row(
+                    //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      // SmallButton(Icons.favorite),
+                      Container(
+                        width: 23,
+                        height: 23,
                         decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: red),
+                        child: Icon(
+                          Icons.favorite,
+                          size: 20,
                           color: white,
-                          boxShadow: [
-                            BoxShadow(
-                                color: grey[300],
-                                offset: Offset(1, 1),
-                                blurRadius: 4),
-                          ],
-                        ),
-                        child: Column(
-                          children: [
-                            Image.network('https://static.toiimg.com/thumb/53205522.cms?imgsize=302803&width=800&height=800',height: 140,width: 200,fit: BoxFit.fill,),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  CustomText(title: "Butter Chicken",),
-                                  Icon(Icons.favorite_border,color: red,size: 19,),
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 0.0),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Row(children: [
-                                    CustomText(title: "4.7",color: grey,size:14),
-                                SizedBox(width: 2,),
-                                  for(i=0;i<4;i++)
-                                    Icon(Icons.star,size: 14,color: red,),
-                                  
-                                  for(j=i;j<5;j++)
-                                    Icon(Icons.star,color: grey,size: 14,),
-                                  ],),
-                                    CustomText(title: '420/-',size: 16),
-                              ],),
-                            ),
-                          ],
                         ),
                       ),
-                    );
-                  }),
-            )
+                      Align(
+                        alignment: Alignment.topRight,
+                        child: Container(
+                          width: 50,
+                          decoration: BoxDecoration(
+                            color: white,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Row(
+                            children: [
+                              Icon(Icons.star, color: Colors.yellow[900]),
+                              CustomText(
+                                title: "4.6",
+                                size: 18,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Positioned.fill(
+                  child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("hello hiiii"),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text("hello"),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: Container(
+        color: grey[50],
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            IconButton(
+                icon: Icon(
+                  Icons.home,
+                  size: 24,
+                ),
+                onPressed: () {}),
+            IconButton(
+                icon: Icon(
+                  Icons.store,
+                  size: 24,
+                ),
+                onPressed: () {}),
+            IconButton(
+                icon: Icon(
+                  Icons.shopping_bag,
+                  size: 24,
+                ),
+                onPressed: () {}),
+            IconButton(
+                icon: Icon(
+                  Icons.person,
+                  size: 24,
+                ),
+                onPressed: () {}),
           ],
         ),
       ),
