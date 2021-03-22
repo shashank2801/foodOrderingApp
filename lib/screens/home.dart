@@ -94,44 +94,46 @@ class _HomeState extends State<Home> {
                 ),
                 Padding(
                   padding: const EdgeInsets.all(15.0),
-                  child: Row(
-                    //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      // SmallButton(Icons.favorite),
-                      Container(
-                        width: 23,
-                        height: 23,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: red),
-                        child: Icon(
-                          Icons.favorite,
-                          size: 20,
-                          color: white,
-                        ),
-                      ),
-                      Align(
-                        alignment: Alignment.topRight,
-                        child: Container(
-                          width: 50,
-                          decoration: BoxDecoration(
-                            color: white,
-                            borderRadius: BorderRadius.circular(20),
+                  child: Positioned.fill(
+                    child: Align(
+                      alignment: Alignment.topCenter,
+                      child: Row(
+                        //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          // SmallButton(Icons.favorite),
+                          Container(
+                            width: 23,
+                            height: 23,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: red),
+                            child: Icon(
+                              Icons.favorite,
+                              size: 20,
+                              color: white,
+                            ),
                           ),
-                          child: Row(
-                            children: [
-                              Icon(Icons.star, color: Colors.yellow[900]),
-                              CustomText(
-                                title: "4.6",
-                                size: 18,
+                          Container(
+                              width: 50,
+                              decoration: BoxDecoration(
+                                color: white,
+                                borderRadius: BorderRadius.circular(20),
                               ),
-                            ],
-                          ),
+                              child: Row(
+                                children: [
+                                  Icon(Icons.star, color: Colors.yellow[900]),
+                                  CustomText(
+                                    title: "4.6",
+                                    size: 18,
+                                  ),
+                                ],
+                              ),
+                            ),
+                        ],
                         ),
+                          ),
                       ),
-                    ],
-                  ),
-                ),
+                    ),
                 Positioned.fill(
                   child: Align(
                     alignment: Alignment.bottomCenter,
