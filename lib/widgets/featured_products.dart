@@ -80,7 +80,7 @@ class Featured extends StatelessWidget {
                                 ),
                             ],
                           ),
-                          CustomText(title: featuredProductList[index].price.toString(), size: 16),
+                          CustomText(title: "₹ " +featuredProductList[index].price.toString(), size: 16),
                         ],
                       ),
                     ),

@@ -1,8 +1,10 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:foodapp/widgets/categories.dart';
 import 'package:foodapp/widgets/constants.dart';
 import 'package:foodapp/widgets/featured_products.dart';
-import 'package:foodapp/widgets/smallButton.dart';
+
 import 'package:foodapp/widgets/title.dart';
 
 class Home extends StatefulWidget {
@@ -80,76 +82,94 @@ class _HomeState extends State<Home> {
                 color: grey,
               ),
             ),
-            Stack(
-              children: [
-                Container(
-                  child: Padding(
-                    padding: const EdgeInsets.all(11.0),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20),
-                      child: Image.network(
-                          'https://images.eatthismuch.com/site_media/img/905635_Shamarie84_8b69ffe3-76ea-4809-b7c3-759d60919a27.png'),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: Positioned.fill(
-                    child: Align(
-                      alignment: Alignment.topCenter,
-                      child: Row(
-                        //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          // SmallButton(Icons.favorite),
-                          Container(
-                            width: 23,
-                            height: 23,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                color: red),
-                            child: Icon(
-                              Icons.favorite,
-                              size: 20,
-                              color: white,
-                            ),
-                          ),
-                          Container(
-                              width: 50,
-                              decoration: BoxDecoration(
-                                color: white,
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Row(
-                                children: [
-                                  Icon(Icons.star, color: Colors.yellow[900]),
-                                  CustomText(
-                                    title: "4.6",
-                                    size: 18,
-                                  ),
-                                ],
-                              ),
-                            ),
-                        ],
-                        ),
-                          ),
+            Container(
+              decoration: BoxDecoration(
+                color: white,
+                boxShadow: [
+                  BoxShadow(
+                      color: grey[300], offset: Offset(1, 1), blurRadius: 4),
+                ],
+              ),
+              child: Stack(
+                children: [
+                  Container(
+                    height: MediaQuery.of(context).size.height*.37,
+                    child: Padding(
+                      padding: const EdgeInsets.all(11.0),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image.network(
+                            'https://images.eatthismuch.com/site_media/img/905635_Shamarie84_8b69ffe3-76ea-4809-b7c3-759d60919a27.png'),
                       ),
                     ),
-                Positioned.fill(
-                  child: Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text("hello hiiii"),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text("hello"),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Positioned.fill(
+                      child: Align(
+                        alignment: Alignment.topCenter,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            // SmallButton(Icons.favorite),
+                            Container(
+                              width: 23,
+                              height: 23,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: red),
+                              child: Icon(
+                                Icons.favorite,
+                                size: 20,
+                                color: white,
+                              ),
+                            ),
+                            Container(
+                                width: 50,
+                                decoration: BoxDecoration(
+                                  color: white,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: Row(
+                                  children: [
+                                    Icon(Icons.star, color: Colors.yellow[900]),
+                                    CustomText(
+                                      title: "4.6",
+                                      size: 18,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                          ],
+                          ),
+                            ),
                         ),
-                      ],
+                      ),
+                  Positioned.fill(
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left:8.0,top: 10),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            RichText(text: TextSpan(children: [
+                              TextSpan(text:"Cheese Tomato \n",style: TextStyle(fontSize: 20,color: black,fontWeight: FontWeight.w500)),
+                              TextSpan(text: "by: ",style: TextStyle(fontSize: 16,color: black)),
+                              TextSpan(text: "Mehta Hotel",style: TextStyle(fontSize: 18,color: black)),
+                            ],),),
+                            
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: CustomText(title: "₹ 210/-",size: 18,),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ],
         ),
