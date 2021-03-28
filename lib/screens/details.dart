@@ -26,13 +26,33 @@ class _DetailsState extends State<Details> {
               padding: const EdgeInsets.all(10.0),
               child: Container(
                 //width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height*.3,
+                height: MediaQuery.of(context).size.height * .3,
                 child: Carousel(
                   images: [
-                    FittedBox(child: Image.network(product.image,height: MediaQuery.of(context).size.height*.4,width: MediaQuery.of(context).size.width,fit: BoxFit.fill,)),
-                    Image.network(product.image,height: MediaQuery.of(context).size.height*.3,width: MediaQuery.of(context).size.width,fit: BoxFit.fill,),
-                    Image.network(product.image,height: MediaQuery.of(context).size.height*.2,width: MediaQuery.of(context).size.width,fit: BoxFit.fill,),
-                    Image.network(product.image,height: MediaQuery.of(context).size.height*.1,width: MediaQuery.of(context).size.width,fit: BoxFit.fill,),
+                    ClipRRect(
+                        borderRadius: BorderRadius.circular(15),
+                        child: Image.network(
+                          product.image,
+                          fit: BoxFit.fill,
+                        )),
+                    ClipRRect(
+                        borderRadius: BorderRadius.circular(15),
+                        child: Image.network(
+                          product.image,
+                          fit: BoxFit.fill,
+                        )),
+                    ClipRRect(
+                        borderRadius: BorderRadius.circular(15),
+                        child: Image.network(
+                          product.image,
+                          fit: BoxFit.fill,
+                        )),
+                    ClipRRect(
+                        borderRadius: BorderRadius.circular(15),
+                        child: Image.network(
+                          product.image,
+                          fit: BoxFit.fill,
+                        )),
                   ],
                   dotBgColor: white,
                   dotColor: grey,

@@ -29,22 +29,29 @@ class Popular extends StatelessWidget {
                 ),
                 child: Stack(
                   children: [
-                    Container(
-                      height: MediaQuery.of(context).size.height * .37,
-                      width: MediaQuery.of(context).size.width * .95,
-                      child: Padding(
-                        padding: const EdgeInsets.all(11.0),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
-                          child: Image.network(popularProductList[index].img,height: MediaQuery.of(context).size.height*.3,),
+
+                    
+                    Column(
+                      children: [
+                        SizedBox(height: MediaQuery.of(context).size.height*0.028,),
+                        Container(
+                          height: MediaQuery.of(context).size.height * .30,
+                          width: MediaQuery.of(context).size.width * .95,
+                          child: Padding(
+                            padding: const EdgeInsets.all(11.0),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: Image.network(popularProductList[index].img,fit: BoxFit.fill),
+                            ),
+                          ),
                         ),
-                      ),
+                      ],
                     ),
                     Positioned.fill(
                       child: Align(
                         alignment: Alignment.topCenter,
                         child: Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(5.0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
