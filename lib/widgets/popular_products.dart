@@ -7,6 +7,8 @@ import 'constants.dart';
 class Popular extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+  final screenheight = MediaQuery.of(context).size.height;
+  final screenwidth = MediaQuery.of(context).size.width;
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(40),
@@ -33,10 +35,10 @@ class Popular extends StatelessWidget {
                     
                     Column(
                       children: [
-                        SizedBox(height: MediaQuery.of(context).size.height*0.028,),
+                        SizedBox(height: screenheight*0.028,),
                         Container(
-                          height: MediaQuery.of(context).size.height * .30,
-                          width: MediaQuery.of(context).size.width * .95,
+                          height: screenheight * .30,
+                          width: screenwidth * .95,
                           child: Padding(
                             padding: const EdgeInsets.all(11.0),
                             child: ClipRRect(

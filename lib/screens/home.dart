@@ -16,6 +16,8 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
+  final screenheight = MediaQuery.of(context).size.height;
+  final screenwidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: white,
       body: SafeArea(
@@ -96,25 +98,25 @@ class _HomeState extends State<Home> {
             IconButton(
                 icon: Icon(
                   Icons.home,
-                  size: 24,
+                  size: screenheight*.05,
                 ),
                 onPressed: () {}),
             IconButton(
                 icon: Icon(
                   Icons.store,
-                  size: 24,
+                  size: screenheight*.05,
                 ),
                 onPressed: () {}),
             IconButton(
                 icon: Icon(
                   Icons.shopping_bag,
-                  size: 24,
+                  size: screenheight*.05,
                 ),
                 onPressed: () {}),
             IconButton(
                 icon: Icon(
                   Icons.person,
-                  size: 24,
+                  size: screenheight*.05,
                 ),
                 onPressed: () {}),
           ],
