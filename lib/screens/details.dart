@@ -36,13 +36,13 @@ class _DetailsState extends State<Details> {
                         Stack(
                           children: [
                             IconButton(
-                                icon: Icon(Icons.shopping_bag,size: 35,),
+                                icon: Icon(Icons.shopping_bag,size: 30,),
                                 onPressed: () {}),
                             Positioned(
-                              right: 4,
-                              top: 20,
+                              right: 6,
+                              top: 24,
                               child: Container(
-                                width: 20,
+                                width: 15,
                                 decoration: BoxDecoration(
                                   color: red,
                                   borderRadius: BorderRadius.circular(100),
@@ -52,7 +52,7 @@ class _DetailsState extends State<Details> {
                                   title: " 2",
                                   color: white,
                                   weight: FontWeight.bold,
-                                  size: 16,
+                                  size: 12,
                                 ),
                               ),
                             ),
@@ -108,15 +108,27 @@ class _DetailsState extends State<Details> {
             ),
             CustomText(title: product.name,size: 26,weight: FontWeight.bold,),
             CustomText(title: "₹" + product.price.toString(),size: 22,color: red,weight: FontWeight.w600,),
-            GestureDetector(
-              onTap: (){},
-              child: Container(
-                decoration: BoxDecoration(
-                  color: red,
+            SizedBox(height: 10,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(icon: Icon(Icons.remove,size: 24,), onPressed: (){}),
+                GestureDetector(
+                  onTap: (){},
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: red,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 16, 20, 16),
+                      child: CustomText(title: "Add To Cart",size: 22,color: white,weight: FontWeight.w600,),
+                    ),
+                    
+                  ),
                 ),
-                child: CustomText(title: "Add to Cart",size: 22,color: white,),
-                
-              ),
+                IconButton(icon: Icon(Icons.add,size: 24,color: red,), onPressed: (){}),
+              ],
             ),
           ],
         ),

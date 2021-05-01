@@ -1,6 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:foodapp/screen_navigation.dart';
+import 'package:foodapp/screens/bag.dart';
 import 'package:foodapp/widgets/categories.dart';
 import 'package:foodapp/widgets/constants.dart';
 import 'package:foodapp/widgets/featured_products.dart';
@@ -98,25 +100,27 @@ class _HomeState extends State<Home> {
             IconButton(
                 icon: Icon(
                   Icons.home,
-                  size: screenheight*.05,
+                  size: screenheight*.04,
                 ),
                 onPressed: () {}),
             IconButton(
                 icon: Icon(
                   Icons.store,
-                  size: screenheight*.05,
+                  size: screenheight*.04,
                 ),
                 onPressed: () {}),
             IconButton(
                 icon: Icon(
                   Icons.shopping_bag,
-                  size: screenheight*.05,
+                  size: screenheight*.04,
                 ),
-                onPressed: () {}),
+                onPressed: () {
+                  changeScreen(context, ShoppingBag());
+                }),
             IconButton(
                 icon: Icon(
                   Icons.person,
-                  size: screenheight*.05,
+                  size: screenheight*.04,
                 ),
                 onPressed: () {}),
           ],
